@@ -1,0 +1,79 @@
+\documentclass[a4paper, 12pt, notitlepage] {article}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{turnstile}
+\usepackage{centernot}
+\renewcommand{\thesubsection}{\alph{subsection}}
+\usepackage{amsmath} % American mathematical society package for matrices etc.
+\usepackage{amssymb} %American mathematical society symbols
+\author{Hitarth \\ Bhishmaraj}
+\title{STM Project Proposal}
+\date{} %This will make sure that date is not shown by \maketitle command
+\begin{document}
+\maketitle		
+
+
+\begin{center}
+MSc CS Students, CMI
+\end{center}
+\begin{center}
+October 24, 2019
+\end{center}
+\newpage
+
+\section{Introduction}
+To makes it easier to automate the process of program verification, debugging and synthesis, we usually focus on a (small) set of programming constructs. This makes it possible to automatically encode the program in logical statements such that it's verification etc can be done. \\
+
+For this project we have decided to focus on the simple programs which involve arrays. We will allow the basic operations like accessing and storing in an array.
+
+\section {Problem: Verification, Debugging and Synthesis in straight line array programs}
+Consider a simple program as given below:
+
+\begin{verbatim}
+/*Program to set a value at a given index 
+if it is larger than existing value*/
+
+void update_value(array, index, value){
+    if array[index] < value {
+        array[index] = value;
+    }
+}
+\end{verbatim}
+
+In this program we are doing a simple operation. We know that the final postcondition would be:  $( a[i] < v \implies a_1[i] == v \land (\forall{j} . j\neq i . a[j] = a_1[j]))    \land (a[i] >= v \implies a_1 = a)$, where $a$ and $a_1$ represent the array before and after the execution of the program respectively.
+Given the pre/post conditions, we can ask for the correctness of the program.\\
+
+Usually while writing the programs involving arrays, we might make an error while accessing the arrays. This is exactly what we will be focussing on while synthesizing. We shall assume that the error is only on the accessing operation, and with the help of Rosette we will try to fix that.\\
+
+Our main goals in this project are as follows:
+\begin{enumerate}
+	\item To take a program and the pre and post conditions, and verify the correctness of the program using Rosette.
+	\item Given two programs, where one is assumed to be correct, verify the correctness of the other suspected program.
+	\item If the program is incorrect as per the either the conditions or the second program which is assumed to be correct, find the parts of the program which might be the cause of the error.
+	\item If the program is incorrect, then  try to synthesize the correct program by only focussing on the bugs due to {\bf array access operations}.
+\end{enumerate}
+
+\section {Approach}
+We will firstly define a basic language which only deals with arrays of integers and provides basic functionalities like accessing and storing in an array. Then we will embed this language with basic programming constructs for arrays in Racket/Rosette.\\
+\\
+Rosette provides us with various tool to verify, debug and synthesize once we write the interpreter in it. We will then explore how we can automate this process and auto fix the bugs related to array accessing.
+\\
+\\
+We will show with examples how we can use this for debugging and synthesis in such programs.\\
+\\
+We also plan to create a seperate GUI application which can provide an easy to use interface to the user to get these functionalities. 
+
+
+\section{Expected Results}
+We expect to have a system which can take simple array programs and help the user with verification, debugging and synthesis provided they give either pre and post conditions or another program which has the correct behaviour.\\
+\\
+Almost all the programs use arrays in one way or another, but most of the useful programs involving arrays also have loops. At least for now, our plan is not to indulge with loops. We might consider the loops if we are successful in the first phase of our project. 
+
+\section*{References}
+
+\begin{enumerate}
+	\item Rosette Language guide - https://docs.racket-lang.org/rosette-guide/index.html
+\end{enumerate}
+\end{document}
