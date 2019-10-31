@@ -33,12 +33,20 @@ October 24, 2019
 
 \section{Introduction}
 
-Solver-aided domain-specific languages (SDSLs) are the languages, for a specific domain, which ease the construction of programs by giving us the ability to automate the taksk like verification, debugging and synthesis. But implementing the SDSLs from the scretch is a very hard task. To simplify our taks, we use Rosette \cite{rosette_paper}. Rosette is a framework for designing solver-aided languages, and is itself a solver-aided language embedded in Racket. Rosette helps us to easily exploit the power of SAT//SMT solver in designing solutions to domain specific constraint solving problems.\\
+Solver-aided programming language/framework, such as Rosette~\cite{??}, extend traditional programming languages with SAT/SMT-specific interface and constructs.
+Such a language framework makes it easier to embed/model domain-specific artifacts/systems and exploit use of SAT/SMT solver features (UNSAT, MAX-SAT, UNSAT-CORE, etc.) for performing various constraint-solving tasks, such as symbolic verification, debugging, bug-localization, and synthesis.
+%
+\hide{
+domain-specific languages (SDSLs) are the languages, for a specific domain, which ease the construction of programs by giving us the ability to automate the taksk like verification, debugging and synthesis. But implementing the SDSLs from the scretch is a very hard task. To simplify our taks, we use Rosette \cite{rosette_paper}. Rosette is a framework for designing solver-aided languages, and is itself a solver-aided language embedded in Racket. Rosette helps us to easily exploit the power of SAT//SMT solver in designing solutions to domain specific constraint solving problems.\\
 \\
+}
+%
 Most of the current work in this field is focussed on arithmetic and bit-vector theories. There are tools for verification of programs in ANSI C with suitable assertions to  a limited extent, like BugAssist\cite{bugassist}, but they don't focus on other solutions like synthesis. Also it's code is not open source.\\
  \\
-{\bf In this project} we propose to use Rosette-Racket for analysis (verifcation and synthesis) of array manipulating programs. Array theory is undecidable, in general, and hence it poses a great challenge to automate the analysis.\\\\
+{\bf In this project} we propose to use Rosette-Racket for analysis (verification, debugging, and fixing) of array manipulating programs.
+An array theory poses a challenge for symbolic analysis as it is undecidable, in general, because it requires quantifier instantiation.
 \hcmt{Find out which paper Prof. Srivas want me to refer in place of "?" ? }\\
+\mscmt{Please check moodle under arraydecproc for the paper; you guys seem never bother to check anything I upload on Moodle!!}\\
 We simplify our problem by restricting ourselves to decidable fragments of the arrays theory (?), and we also restrict the class of programs that we will allow for analysis. .
 
 \section {Problem: Verification, Debugging and Synthesis in straight line array programs}
