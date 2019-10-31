@@ -33,15 +33,24 @@ October 24, 2019
 
 \section{Introduction}
 
-Solver-aided domain-specific languages (SDSLs) are the languages, for a specific domain, which ease the construction of programs by giving us the ability to automate the taksk like verification, debugging and synthesis. But implementing the SDSLs from the scretch is a very hard task. To simplify our taks, we use Rosette \cite{rosette_paper}. Rosette is a framework for designing solver-aided languages, and is itself a solver-aided language embedded in Racket. Rosette helps us to easily exploit the power of SAT//SMT solver in designing solutions to domain specific constraint solving problems.\\
+Solver-aided programming language/framework, such as Rosette~\cite{??}, extend traditional programming languages with SAT/SMT-specific interface and constructs.
+Such a language framework makes it easier to embed/model domain-specific artifacts/systems and exploit use of SAT/SMT solver features (UNSAT, MAX-SAT, UNSAT-CORE, etc.) for performing various constraint-solving tasks, such as symbolic verification, debugging, bug-localization, and synthesis.
+%
+\hide{
+domain-specific languages (SDSLs) are the languages, for a specific domain, which ease the construction of programs by giving us the ability to automate the taksk like verification, debugging and synthesis. But implementing the SDSLs from the scretch is a very hard task. To simplify our taks, we use Rosette \cite{rosette_paper}. Rosette is a framework for designing solver-aided languages, and is itself a solver-aided language embedded in Racket. Rosette helps us to easily exploit the power of SAT//SMT solver in designing solutions to domain specific constraint solving problems.\\
 \\
+}
+%
 Most of the current work in this field is focussed on arithmetic and bit-vector theories. There are tools for verification of programs in ANSI C with suitable assertions to  a limited extent, like BugAssist\cite{bugassist}, but they don't focus on other solutions like synthesis. Also it's code is not open source.\\
  \\
-{\bf In this project} we propose to use Rosette-Racket for analysis (verifcation and synthesis) of array manipulating programs. Array theory is undecidable, in general, and hence it poses a great challenge to automate the analysis.\\\\
+{\bf In this project} we propose to use Rosette-Racket for analysis ($verification$, $debugging$, and \emph{bug-fixing}) of array manipulating programs.
+An array theory poses a challenge for symbolic analysis as it is undecidable, in general, because it requires quantifier instantiation.
 \hcmt{Find out which paper Prof. Srivas want me to refer in place of "?" ? }\\
-We simplify our problem by restricting ourselves to decidable fragments of the arrays theory (?), and we also restrict the class of programs that we will allow for analysis. .
+\mscmt{Please check moodle under arraydecproc for the paper; you guys seem never bother to check anything I upload on Moodle!!}\\
+We simplify our problem by restricting ourselves to a decidable fragment of arrays theory~\cite{??}, and we also restrict the class of programs that we target for analysis. .
 
 \section {Problem: Verification, Debugging and Synthesis in straight line array programs}
+\mscmt{As I suggested yesterday, use a simple (buggy) array program with multiple assignment statements possibly conditional to clearly illustrate the three tasks of verification, bug-localization and bug-fixing.}
 Consider a simple program as given below:
 
 \includegraphics[scale=0.6]{arrayprogex} \\
@@ -62,6 +71,7 @@ Given the pre/post conditions, we can ask for the correctness of the program. As
 \\
 Usually while writing the programs involving arrays, we might make an error while accessing the arrays. This is exactly what we will be focussing on while synthesizing. We shall assume that the error is only on the accessing operation, and with the help of Rosette we will try to fix that.\\\\
 
+\mscmt{Merge this part with Approach; Note that for SMT proposal you have a limit of 2 pages.} \\
 {\bf Methodology:}
 \begin{enumerate}
 	\item  Describing a language which can be used to specify the array manipulating programs with the pre/post conditions and loop invariants \\
@@ -79,6 +89,8 @@ Usually while writing the programs involving arrays, we might make an error whil
 \end{enumerate}
 
 \section {Approach}
+\mscmt{You can include an extended version of the grammar I have shown for Problem 3 of assignment to include array selects and updates.} \\
+\mscmt{You should specify the class of fixes you will be restricting yourself to.} \\
 We will firstly define a basic language which only deals with arrays of integers and provides basic functionalities like accessing and storing in an array. Then we will embed this language with basic programming constructs for arrays in Racket/Rosette.\\
 \\
 Rosette provides us with various tool to verify, debug and synthesize once we write the interpreter in it. We will then explore how we can automate this process and auto fix the bugs related to array accessing.
@@ -86,6 +98,7 @@ Rosette provides us with various tool to verify, debug and synthesize once we wr
 \\
 We will show with examples how we can use this for debugging and synthesis in such programs.\\
 \\
+\mscmt{Drop this.  You can just use Rosette interface.}\\
 We also plan to create a seperate GUI application which can provide an easy to use interface to the user to get these functionalities. 
 
 
