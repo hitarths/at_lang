@@ -5,6 +5,9 @@
 \usepackage{enumerate}
 \usepackage{turnstile}
 \usepackage{centernot}
+\usepackage{mathtools}
+
+\usepackage{listings}
 \renewcommand{\thesubsection}{\alph{subsection}}
 
 
@@ -45,41 +48,63 @@ Most of the current work in this field is focussed on arithmetic and bit-vector 
  \\
 {\bf In this project} we propose to use Rosette-Racket for analysis ($verification$, $debugging$, and \emph{bug-fixing}) of array manipulating programs.
 An array theory poses a challenge for symbolic analysis as it is undecidable, in general, because it requires quantifier instantiation.
-\hcmt{Find out which paper Prof. Srivas want me to refer in place of "?" ? }\\
 \mscmt{Please check moodle under arraydecproc for the paper; you guys seem never bother to check anything I upload on Moodle!!}\\
 We simplify our problem by restricting ourselves to a decidable fragment of arrays theory~\cite{??}, and we also restrict the class of programs that we target for analysis. .
 
 \section {Problem: Verification, Debugging and Synthesis in straight line array programs}
-\mscmt{As I suggested yesterday, use a simple (buggy) array program with multiple assignment statements possibly conditional to clearly illustrate the three tasks of verification, bug-localization and bug-fixing.}
-Consider a simple program as given below:
+\mscmt{As I suggested yesterday, use a simple (buggy) array program with multiple assignment statements possibly conditional to clearly illustrate the three tasks of verification, bug-localization and bug-fixing.}\\
+For the demonstration of problem, we shall give an example. Consider a simple program which swaps the value at $i$ and $j$ index of an array $a$ if they are not in ascending order. We are writing the program in C-like syntax for demonstration only, in practice, the program will be written in the grammar defined by our language with the pre/post conditions. \\
+We have introduced an {\bf error } in the program by making $temp = a[i]$ instead of $temp=a[j]$, which was required for the succesful working of the program.\\ 
 
-\includegraphics[scale=0.6]{arrayprogex} \\
+\begin{lstlisting}[language=C, mathescape=true]
+int[] a;
+int i, j;
+${\bf @Pre:  assert}( a_i = a[i] \land a_j = a[j] )$
+if (a[i] > a[j]) {
+ temp = a[i];
+ a[i]    = a[j];
+ a[j]    = temp;
+}
+else continue;
+	
+${\bf @Post:  assert}(a_i > a_j \implies a[i] = a_j \land a[j] = a_i)$
+${\bf @Post:  assert}(\neg (a_i > a_j) \implies a[i] = a_i \land a[j] = a_j)$
+\end{lstlisting}
+$ $\\
+We will covert the program in logical formula using Racket/Rosette, and then proceed to the verification. Assume that the final formula we get is $P$.\\
 \\
-
-The postcondition for this program is as follows:
 \begin{equation}
 \begin{split}
-(&\forall{x \in \mathbb{N}} . x<i \implies a[x] = 0)  \\
-	&\land a' = a\{i \leftarrow 0\} \\
-	&\implies (\forall{x \in \mathbb{N}} . x \leq i \implies a'[x] = 0) 
+  &P \coloneqq (\\
+  &(a_i = a[i] \land a_j = a[j]) \\
+&\land (a[i] > a[j] \implies t = a[i]\\
+& \land a' = a\{i \leftarrow a[j]\})  \\
+& \land a'' = a'\{j \leftarrow t\}\\
+&) \\
+&\implies ((a_i > a_j \implies a[i] = a_j \land a[j] = a_i)\\
+&\land (\neg (a_i > a_j) \implies a[i] = a_i \land a[j] = a_j))
 \end{split}
 \end{equation}
-
-Here $a$ and $a'$ represent the array before and after the execution of the program respectively.
-Given the pre/post conditions, we can ask for the correctness of the program. As this program is correct, it will satisfy the post-condition. If the program was not correct, then with the help of Rosette we can find out the cause of error and localize the fault. \\
-\hcmt {Do I need to write an example of faulty program and show how we want tol get the fault localized (for demonstration purposes)?}
+{\bf Verification:} We expect that $\neg P$ will be $UNSAT$. If it is the case, the program is verified.
+\\\\
+{\bf Debugging:} If $\neg P$ is $SAT$, then there is a bug in the program. We shall get the model for this $SAT$ instance, and check for the $UNSAT$ core for $P$ under this model. This, we expect, will be done with the help of Rosette. \\
 \\
-Usually while writing the programs involving arrays, we might make an error while accessing the arrays. This is exactly what we will be focussing on while synthesizing. We shall assume that the error is only on the accessing operation, and with the help of Rosette we will try to fix that.\\\\
+{\bf Synthesis:} For the sake of simplicity, {\bf we shall assume that the bug lies in the array access operations} in the program. For synthesis, we shall convert the program to a sketch by introducing \emph{holes} in the array access operations. Then, with the help of Rosette, we shall try to find out the possible substitution for the holes so that the $\neg P$ becomes $UNSAT$, and hence the program becomes correct. \\
+\\
+
+\section {Approach}
 
 \mscmt{Merge this part with Approach; Note that for SMT proposal you have a limit of 2 pages.} \\
-{\bf Methodology:}
+\mscmt{You can include an extended version of the grammar I have shown for Problem 3 of assignment to include array selects and updates.} \\
+\mscmt{You should specify the class of fixes you will be restricting yourself to.} \\
+
 \begin{enumerate}
 	\item  Describing a language which can be used to specify the array manipulating programs with the pre/post conditions and loop invariants \\
 	\item Develop an interpreter for this language using Rosette which will help in converting the problem of performing the following analysis of a restricted class of array manipulating programs into instances of SMT array logic internally.
 	\begin{itemize}
 		\item Verifying an array manipulating program against its specification given as pre-post conditions and loop invariants (for program with loops).
 		\item Localizing the location of a bug when verification fails.
-		\item Synthesizing a fix for the bug when there exists a fix within a restricted class of possible fixes.\\
+		\item Synthesizing a fix for the bug when there is fix available {\bf by manipulating the array access indices}. We will allow the array access index to be replaced by any index (or index plus a constant) in the program. \\
 		In this project we will focus on the bugs due to array access operations.
 	\end{itemize}
 	
@@ -87,19 +112,6 @@ Usually while writing the programs involving arrays, we might make an error whil
 	
 	\item Experiment our implementation on a targeted class of benchmark examples.
 \end{enumerate}
-
-\section {Approach}
-\mscmt{You can include an extended version of the grammar I have shown for Problem 3 of assignment to include array selects and updates.} \\
-\mscmt{You should specify the class of fixes you will be restricting yourself to.} \\
-We will firstly define a basic language which only deals with arrays of integers and provides basic functionalities like accessing and storing in an array. Then we will embed this language with basic programming constructs for arrays in Racket/Rosette.\\
-\\
-Rosette provides us with various tool to verify, debug and synthesize once we write the interpreter in it. We will then explore how we can automate this process and auto fix the bugs related to array accessing.
-\\
-\\
-We will show with examples how we can use this for debugging and synthesis in such programs.\\
-\\
-\mscmt{Drop this.  You can just use Rosette interface.}\\
-We also plan to create a seperate GUI application which can provide an easy to use interface to the user to get these functionalities. 
 
 
 \section{Expected Results}
