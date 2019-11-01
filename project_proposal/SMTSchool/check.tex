@@ -96,16 +96,16 @@ We have deliberately introduced a {\bf bug} in line~5 of the program by using $j
 \end{lstlisting}
 $ $\\
 Our goal is to develop a prototype tool that does the following:
-(1) \emph{verify} such program assertions; if an assertion fails (2) localize \emph{bugs} to a region (line~5) of the program, and suggest a possible fix (replace $J$ by $i$) to make the assertion true.
+(1) \emph{verify} such program assertions, and if an assertion fails (2) localize \emph{bugs} to a region (line~5, in this example) of the program, and suggest a possible fix (replace $j$ by $i$) that makes the assertion true.
 \section {Approach}
 
 
 We will covert the program in logical formula using Racket/Rosette, and then proceed to the verification. Assume that the final formula we get is $P$.\\\\
 {\bf Verification:} We expect that $\neg P$ will be $UNSAT$. If it is the case, the program is verified.
 \\\\
-{\bf Debugging:} If $\neg P$ is $SAT$, then there is a bug in the program. We shall get the model for this $SAT$ instance, and check for the $UNSAT$ core for $P$ under this model. This, we expect, will be done with the help of Rosette. \\
+{\bf Bug Localization:} If $\neg P$ is $SAT$, then there is a bug in the program. We shall get one or more counter models for this $SAT$ instance; for these models $P$ must be UNSAT.  We use the $UNSAT$ core for UNSAT proof of $P$ under this model to filter out as much of the code which is not relevant for the bug. These tasks will be done using interface in Rosette for computing MAXSAT and UNSAT cores. \\
 \\
-{\bf Synthesis:} For the sake of simplicity, {\bf we shall assume that the bug lies in the array access operations} in the program. For synthesis, we shall convert the program to a sketch by introducing \emph{holes} in the array access operations. Then, with the help of Rosette, we shall try to find out the possible substitution for the holes so that the $\neg P$ becomes $UNSAT$, and hence the program becomes correct. \\
+{\bf Bug-fixing:} For the sake of simplicity, {\bf we shall assume that the bug lies in the array access operations} in the program. For synthesis, we shall convert the program to a sketch by introducing \emph{holes} in the array access operations, i.e., in the index expressions used in array select or update. Then, with the help of Rosette, we shall try to find out the possible substitution for the holes so that the $\neg P$ becomes $UNSAT$, and hence the program becomes correct. \\
 \\
 {\bf Methodology}
 \begin{enumerate}
