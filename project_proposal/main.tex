@@ -53,20 +53,21 @@ We simplify our problem by restricting ourselves to a decidable fragment of arra
 We simplify the problem of bug-fixing, which is essentially a synthesis problem, by restricting the grammar of the expressions that can be used in the fixes.
 
 \section {Problem: Automatic Verification, Debugging and Fixing Array Programs}
-\mscmt{As I suggested yesterday, use a simple (buggy) array program with multiple assignment statements possibly conditional to clearly illustrate the three tasks of verification, bug-localization and bug-fixing.}\\
-For the demonstration of problem, we shall give an example. Consider a simple program which swaps the value at $i$ and $j$ index of an array $a$ if they are not in ascending order. We are writing the program in C-like syntax for demonstration only, in practice, the program will be written in the grammar defined by our language with the pre/post conditions. \\
-We have introduced an {\bf error } in the program by making $temp = a[i]$ instead of $temp=a[j]$, which was required for the succesful working of the program.\\ 
+%\mscmt{As I suggested yesterday, use a simple (buggy) array program with multiple assignment statements possibly conditional to clearly illustrate the three tasks of verification, bug-localization and bug-fixing.}\\
+\hide{For the demonstration of problem, we shall give an example.}
+Consider a simple program that is expected to swap the values at $i$ and $j$ index of an array $a$ if they are not in ascending order.
+\hide{We are writing the program in C-like syntax for demonstration only, in practice, the program will be written in the grammar defined by our language with the pre/post conditions.}
+We have deliberately introduced a {\bf bug} in line~5 of the program by using $j$ instead of $i$ in the array select to preserve the post-assertion\\ 
 
 \begin{lstlisting}[language=C, mathescape=true]
-int[10] a;
-unsigned int i, j;
-${\bf @Pre:  assume}(i<10~\&\&~j <10)$
-if (a[i] <= a[j]) {
- temp = a[j]; //Bug!!
- a[i]    = a[j];
- a[j]    = temp; }
-	
-${\bf @Post:  assert}(a[i] > a[j])$
+1: int[10] a;
+2: unsigned int i, j;
+3: ${\bf @Pre:  assume}(i<10~\&\&~j <10)$
+4: if (a[i] <= a[j]) {
+5:    temp = a[j]; //Bug!!
+6:    a[i] = a[j];
+7:    a[j] = temp; }
+8: ${\bf @Post:  assert}(a[i] > a[j])$
 \end{lstlisting}
 $ $\\
 We will covert the program in logical formula using Racket/Rosette, and then proceed to the verification. Assume that the final formula we get is $P$.\\
