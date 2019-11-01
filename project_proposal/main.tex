@@ -48,27 +48,25 @@ Most of the current work in this field is focussed on arithmetic and bit-vector 
  \\
 {\bf In this project} we propose to use Rosette-Racket for analysis ($verification$, $debugging$, and \emph{bug-fixing}) of array manipulating programs.
 An array theory poses a challenge for symbolic analysis as it is undecidable, in general, because it requires quantifier instantiation.
-\mscmt{Please check moodle under arraydecproc for the paper; you guys seem never bother to check anything I upload on Moodle!!}\\
-We simplify our problem by restricting ourselves to a decidable fragment of arrays theory~\cite{??}, and we also restrict the class of programs that we target for analysis. .
+%\mscmt{Please check moodle under arraydecproc for the paper; you guys seem never bother to check anything I upload on Moodle!!}\\
+We simplify our problem by restricting ourselves to a decidable fragment of arrays theory~\cite{weakeqarrays}.
+We simplify the problem of bug-fixing, which is essentially a synthesis problem, by restricting the grammar of the expressions that can be used in the fixes.
 
-\section {Problem: Verification, Debugging and Synthesis in straight line array programs}
+\section {Problem: Automatic Verification, Debugging and Fixing Array Programs}
 \mscmt{As I suggested yesterday, use a simple (buggy) array program with multiple assignment statements possibly conditional to clearly illustrate the three tasks of verification, bug-localization and bug-fixing.}\\
 For the demonstration of problem, we shall give an example. Consider a simple program which swaps the value at $i$ and $j$ index of an array $a$ if they are not in ascending order. We are writing the program in C-like syntax for demonstration only, in practice, the program will be written in the grammar defined by our language with the pre/post conditions. \\
 We have introduced an {\bf error } in the program by making $temp = a[i]$ instead of $temp=a[j]$, which was required for the succesful working of the program.\\ 
 
 \begin{lstlisting}[language=C, mathescape=true]
-int[] a;
-int i, j;
-${\bf @Pre:  assert}( a_i = a[i] \land a_j = a[j] )$
-if (a[i] > a[j]) {
- temp = a[i];
+int[10] a;
+unsigned int i, j;
+${\bf @Pre:  assume}(i<10~\&\&~j <10)$
+if (a[i] <= a[j]) {
+ temp = a[j]; //Bug!!
  a[i]    = a[j];
- a[j]    = temp;
-}
-else continue;
+ a[j]    = temp; }
 	
-${\bf @Post:  assert}(a_i > a_j \implies a[i] = a_j \land a[j] = a_i)$
-${\bf @Post:  assert}(\neg (a_i > a_j) \implies a[i] = a_i \land a[j] = a_j)$
+${\bf @Post:  assert}(a[i] > a[j])$
 \end{lstlisting}
 $ $\\
 We will covert the program in logical formula using Racket/Rosette, and then proceed to the verification. Assume that the final formula we get is $P$.\\
@@ -127,6 +125,9 @@ Almost all the programs use arrays in one way or another, but most of the useful
 	
 	\bibitem{bugassist}
 	Manu Jose and Rupak Majumdar, Cause Clue Clauses: Error Localization Using Maximum Satisfiablity, ACM SIGPLAN conference on Programming Language Design and Implementation (PLDI), June 2011, San Jose, California, USA.
+	
+	\bibitem{weakeqarrays}
+	J. Christ and J. Hoenicke, Weakly Equivalent Arrays, SMT 2014
 	
 \end{thebibliography}
 
