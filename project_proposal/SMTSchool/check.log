@@ -1,14 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.9.18)  1 NOV 2019 17:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.9.18)  1 NOV 2019 17:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**check.tex
+(./check.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
-(/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@section=\count81
@@ -22,30 +22,29 @@ File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2019basic/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
-
-(/usr/local/texlive/2019basic/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
+(./aaai19.sty
+Conference Style for AAAI for LaTeX 2e -- version for the AAAI-19 conference
+\titlebox=\skip43
+) (/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-Package color Info: Driver file: pdftex.def on input line 147.
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 
-(/usr/local/texlive/2019basic/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
 ))
-(/usr/local/texlive/2019basic/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks14
-\verbatim@line=\toks15
-\verbatim@in@stream=\read1
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2019basic/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
-)
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
@@ -56,12 +55,12 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
-)
+
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
-) (/usr/local/texlive/2019basic/texmf-dist/tex/latex/tools/enumerate.sty
-Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks17
 )
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/turnstile/turnstile.sty
 Package: turnstile 2007/06/23 v1.0 turnstile file
@@ -69,20 +68,20 @@ Package: turnstile 2007/06/23 v1.0 turnstile file
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\firstwidth=\skip43
-\secondwidth=\skip44
-\extrawidth=\skip45
-\leasturnstilewidth=\skip46
-\turnstilewidth=\skip47
-\turnstileheight=\skip48
-\dashthickness=\skip49
-\ddashthickness=\skip50
-\raiseup=\skip51
-\raisedown=\skip52
-\tinyverdistance=\skip53
-\verdistance=\skip54
-\lift=\skip55
-\lengthvar=\skip56
+\firstwidth=\skip44
+\secondwidth=\skip45
+\extrawidth=\skip46
+\leasturnstilewidth=\skip47
+\turnstilewidth=\skip48
+\turnstileheight=\skip49
+\dashthickness=\skip50
+\ddashthickness=\skip51
+\raiseup=\skip52
+\raisedown=\skip53
+\tinyverdistance=\skip54
+\verdistance=\skip55
+\lift=\skip56
+\lengthvar=\skip57
 \first=\box27
 \second=\box28
 \turnstilebox=\box29
@@ -99,19 +98,19 @@ Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bcount=\count89
 \calc@Adimen=\dimen105
 \calc@Bdimen=\dimen106
-\calc@Askip=\skip57
-\calc@Bskip=\skip58
+\calc@Askip=\skip58
+\calc@Bskip=\skip59
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count90
-\calc@Cskip=\skip59
+\calc@Cskip=\skip60
 )
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
 )
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2018/12/01 v2.17b AMS math features
-\@mathmargin=\skip60
+\@mathmargin=\skip61
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -119,7 +118,7 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks18
+\@emptytoks=\toks15
 \ex@=\dimen107
 ))
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -146,24 +145,24 @@ LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
 \macc@depth=\count96
 \c@MaxMatrixCols=\count97
-\dotsspace@=\muskip10
+\dotsspace@=\muskip11
 \c@parentequation=\count98
 \dspbrk@lvl=\count99
-\tag@help=\toks19
+\tag@help=\toks16
 \row@=\count100
 \column@=\count101
 \maxfields@=\count102
-\andhelp@=\toks20
+\andhelp@=\toks17
 \eqnshift@=\dimen110
 \alignsep@=\dimen111
 \tagshift@=\dimen112
 \tagwidth@=\dimen113
 \totwidth@=\dimen114
 \lineht@=\dimen115
-\@envbody=\toks21
-\multlinegap=\skip61
-\multlinetaggap=\skip62
-\mathdisplay@stack=\toks22
+\@envbody=\toks18
+\multlinegap=\skip62
+\multlinetaggap=\skip63
+\mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2844.
 LaTeX Info: Redefining \] on input line 2845.
 )
@@ -173,13 +172,23 @@ LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \g_MT_multlinerow_int=\count103
 \l_MT_multwidth_dim=\dimen116
-\origjot=\skip63
+\origjot=\skip64
 \l_MT_shortvdotswithinadjustabove_dim=\dimen117
 \l_MT_shortvdotswithinadjustbelow_dim=\dimen118
 \l_MT_above_intertext_sep=\dimen119
 \l_MT_below_intertext_sep=\dimen120
 \l_MT_above_shortintertext_sep=\dimen121
 \l_MT_below_shortintertext_sep=\dimen122
+)
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks20
+\verbatim@line=\toks21
+\verbatim@in@stream=\read1
+)
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks22
 )
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count104
@@ -216,22 +225,26 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(./main.aux)
-\openout1 = `main.aux'.
+(./check.aux)
+\openout1 = `check.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 64.
 
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
 (/usr/local/texlive/2019basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count112
@@ -296,23 +309,69 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count118
-LaTeX Font Info:    Try loading font information for U+msa on input line 26.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
  (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 26.
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 65.
 
-{/usr/local/texlive/2019basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 39--54
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
+
+Underfull \hbox (badness 1163) in paragraph at lines 69--71
+\OT1/ptm/m/n/10 UNSAT-CORE, etc.) for per-form-ing var-i-ous constraint-
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
+
+Underfull \hbox (badness 1769) in paragraph at lines 72--79
+\OT1/ptm/m/n/10 arith-metic and bit-vector the-o-ries. There are tools for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--61
+Underfull \hbox (badness 1127) in paragraph at lines 72--79
+\OT1/ptm/b/n/10 In this project \OT1/ptm/m/n/10 we pro-pose to use Rosette-Rack
+et for
+ []
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 72--79
+\OT1/ptm/m/n/10 anal-y-sis ($\OML/cmm/m/it/10 verification$\OT1/ptm/m/n/10 , $\
+OML/cmm/m/it/10 debugging$\OT1/ptm/m/n/10 , and \OT1/ptm/m/it/10 bug-fixing\OT1
+/ptm/m/n/10 ) of
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 72--79
+\OT1/ptm/m/n/10 ar-ray ma-nip-u-lat-ing pro-grams. An ar-ray the-ory poses a
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 72--79
+\OT1/ptm/m/n/10 gen-eral, be-cause it re-quires quan-ti-fier in-stan-ti-a-tion.
+ We
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
@@ -322,70 +381,75 @@ File: lstlang1.sty 2019/02/27 1.8b listings language file
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 66.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 91.
 
-(/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+(/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
 )
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 66.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 66.
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 91.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
 
-(/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 82--104
+Underfull \hbox (badness 10000) in paragraph at lines 103--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--104
+Underfull \hbox (badness 10000) in paragraph at lines 103--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--104
+Underfull \hbox (badness 10000) in paragraph at lines 103--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--104
-
+Underfull \hbox (badness 3260) in paragraph at lines 103--112
+\OT1/ptm/b/n/10 Synthesis: \OT1/ptm/m/n/10 For the sake of sim-plic-ity, \OT1/p
+tm/b/n/10 we shall as-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--104
+Underfull \hbox (badness 10000) in paragraph at lines 103--112
 
  []
 
+[1{/usr/local/texlive/2019basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
+
+]
+Underfull \hbox (badness 1466) in paragraph at lines 118--119
+[]\OT1/ptm/m/n/10 Synthesize bug fixes by per-form-ing syntax-guided
  []
 
-[3] [4] (./main.aux) ) 
+(./check.bbl) [2
+
+] (./check.aux) ) 
 Here is how much of TeX's memory you used:
- 4926 strings out of 494060
- 68236 string characters out of 6163035
- 324452 words of memory out of 5000000
- 8550 multiletter control sequences out of 15000+600000
- 13064 words of font info for 50 fonts, out of 8000000 for 9000
+ 5023 strings out of 494060
+ 69722 string characters out of 6163035
+ 329779 words of memory out of 5000000
+ 8630 multiletter control sequences out of 15000+600000
+ 17267 words of font info for 40 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 41i,6n,51p,596b,1343s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2019basic/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019basic/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2019basic/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019basic/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (4 pages, 83511 bytes).
+ 41i,10n,51p,452b,1558s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019basic/texmf-dist/fonts/enc/dvips/base/
+8r.enc}</usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmbx10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/u
+rw/times/utmb8a.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/ti
+mes/utmr8a.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/u
+tmri8a.pfb>
+Output written on check.pdf (2 pages, 99632 bytes).
 PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 44 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -73,12 +73,14 @@ $ $\\
 Our goal is to develop a prototype tool that does the following:
 (1) \emph{verify} such program assertions; if an assertion fails (2) localize \emph{bugs} to a region (line~5) of the program, and suggest a possible fix (replace $J$ by $i$) to make the assertion true.
 \section {Approach}
-
+\hide{
 \mscmt{Merge this part with Approach; Note that for SMT proposal you have a limit of 2 pages.} \\
 \mscmt{You can include an extended version of the grammar I have shown for Problem 3 of assignment to include array selects and updates.} \\
 \mscmt{You should specify the class of fixes you will be restricting yourself to.} \\
+}
 
-We will covert the program in logical formula using Racket/Rosette, and then proceed to the verification. Assume that the final formula we get is $P$.\\
+We will covert the program in logical formula using Racket/Rosette, and then proceed to the verification. Assume that the final formula we get is $P$.\\\\
+\hide{
 \\
 \begin{equation}
 \begin{split}
@@ -92,6 +94,7 @@ We will covert the program in logical formula using Racket/Rosette, and then pro
 &\land (\neg (a_i > a_j) \implies a[i] = a_i \land a[j] = a_j))
 \end{split}
 \end{equation}
+}
 {\bf Verification:} We expect that $\neg P$ will be $UNSAT$. If it is the case, the program is verified.
 \\\\
 {\bf Debugging:} If $\neg P$ is $SAT$, then there is a bug in the program. We shall get the model for this $SAT$ instance, and check for the $UNSAT$ core for $P$ under this model. This, we expect, will be done with the help of Rosette. \\
