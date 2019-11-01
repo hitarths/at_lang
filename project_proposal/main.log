@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 NOV 2019 08:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 NOV 2019 08:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -316,16 +316,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Citation `??' on page 2 undefined on input line 39.
-
-
-Overfull \hbox (27.05539pt too wide) in paragraph at lines 39--54
-\OT1/cmr/m/n/12 constraint-solving tasks, such as sym-bolic ver-i-fi-ca-tion, d
-e-bug-ging, bug-localization,
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 39--54
 
  []
@@ -355,69 +345,66 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--75
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 86--93
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 77--80
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--93
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--93
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--93
+Underfull \hbox (badness 10000) in paragraph at lines 94--101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--99
+Underfull \hbox (badness 10000) in paragraph at lines 94--101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+Underfull \hbox (badness 10000) in paragraph at lines 94--101
 
  []
 
-[3] [4] [5] (./main.aux)
 
-LaTeX Warning: There were undefined references.
+Underfull \hbox (badness 10000) in paragraph at lines 94--101
 
- ) 
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+[4] [5] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 4586 strings out of 493014
- 65012 string characters out of 6133351
- 157693 words of memory out of 5000000
- 8048 multiletter control sequences out of 15000+600000
+ 4585 strings out of 493014
+ 65008 string characters out of 6133351
+ 157658 words of memory out of 5000000
+ 8047 multiletter control sequences out of 15000+600000
  13064 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,15n,51p,597b,1218s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (5 pages, 113172 bytes).
+ 38i,15n,51p,596b,1218s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
+12.pfb>
+Output written on main.pdf (5 pages, 113931 bytes).
 PDF statistics:
  56 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream
