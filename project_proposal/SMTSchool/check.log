@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.9.18)  14 NOV 2019 14:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.9.18)  14 NOV 2019 23:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -241,19 +241,19 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (./check.aux)
 \openout1 = `check.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 65.
 
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -323,68 +323,68 @@ e
 ))
 \c@lstlisting=\count118
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 68.
-LaTeX Font Info:    Try loading font information for U+msa on input line 68.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 66.
+LaTeX Font Info:    Try loading font information for U+msa on input line 66.
  (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 68.
+LaTeX Font Info:    Try loading font information for U+msb on input line 66.
 
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 68.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 68.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 66.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 66.
 
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
 
-Underfull \hbox (badness 1163) in paragraph at lines 72--74
+Underfull \hbox (badness 1163) in paragraph at lines 70--72
 \OT1/ptm/m/n/10 UNSAT-CORE, etc.) for per-form-ing var-i-ous constraint-
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 75.
 
-Underfull \hbox (badness 1769) in paragraph at lines 75--82
+Underfull \hbox (badness 1769) in paragraph at lines 73--80
 \OT1/ptm/m/n/10 arith-metic and bit-vector the-o-ries. There are tools for
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--82
+Underfull \hbox (badness 10000) in paragraph at lines 73--80
 
  []
 
 
-Underfull \hbox (badness 1127) in paragraph at lines 75--82
+Underfull \hbox (badness 1127) in paragraph at lines 73--80
 \OT1/ptm/b/n/10 In this project \OT1/ptm/m/n/10 we pro-pose to use Rosette-Rack
 et for
  []
 
 
-Underfull \hbox (badness 1939) in paragraph at lines 75--82
+Underfull \hbox (badness 1939) in paragraph at lines 73--80
 \OT1/ptm/m/n/10 anal-y-sis ($\OML/cmm/m/it/10 verification$\OT1/ptm/m/n/10 , $\
 OML/cmm/m/it/10 debugging$\OT1/ptm/m/n/10 , and \OT1/ptm/m/it/10 bug-fixing\OT1
 /ptm/m/n/10 ) of
  []
 
 
-Underfull \hbox (badness 1097) in paragraph at lines 75--82
+Underfull \hbox (badness 1097) in paragraph at lines 73--80
 \OT1/ptm/m/n/10 ar-ray ma-nip-u-lat-ing pro-grams. An ar-ray the-ory poses a
  []
 
 
-Underfull \hbox (badness 1043) in paragraph at lines 75--82
+Underfull \hbox (badness 1043) in paragraph at lines 73--80
 \OT1/ptm/m/n/10 gen-eral, be-cause it re-quires quan-ti-fier in-stan-ti-a-tion.
  We
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
@@ -394,38 +394,38 @@ File: lstlang1.sty 2019/02/27 1.8b listings language file
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 94.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 92.
 
 (/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 94.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 92.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 94.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--115
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--115
+Underfull \hbox (badness 10000) in paragraph at lines 104--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--115
+Underfull \hbox (badness 10000) in paragraph at lines 104--113
 
  []
 
 
-Underfull \hbox (badness 2245) in paragraph at lines 106--115
+Underfull \hbox (badness 10000) in paragraph at lines 104--113
+
+ []
+
+
+Underfull \hbox (badness 2245) in paragraph at lines 104--113
 \OT1/ptm/b/n/10 Bug-fixing: \OT1/ptm/m/n/10 For the sake of sim-plic-ity, \OT1/
 ptm/b/n/10 we shall as-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--115
+Underfull \hbox (badness 10000) in paragraph at lines 104--113
 
  []
 
@@ -434,45 +434,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--115
 
 
 ]
-Underfull \hbox (badness 1466) in paragraph at lines 121--122
+Underfull \hbox (badness 1466) in paragraph at lines 119--120
 []\OT1/ptm/m/n/10 Synthesize bug fixes by per-form-ing syntax-guided
  []
 
 
 LaTeX Font Warning: Font shape `OMS/ptm/bx/n' undefined
 (Font)              using `OMS/ptm/m/n' instead
-(Font)              for symbol `textbar' on input line 144.
+(Font)              for symbol `textbar' on input line 142.
 
 LaTeX Font Info:    Font shape `OMS/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 144.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 142.
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--147
-[]\OT1/ptm/m/n/10 ([] \OT1/ptm/b/n/10 &&
+Underfull \hbox (badness 10000) in paragraph at lines 141--145
+[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--166
+Overfull \hbox (2.81985pt too wide) in paragraph at lines 141--145
+\OT1/ptm/m/n/10 ([]\OT1/ptm/b/n/10 &&[]\OT1/ptm/m/n/10 ) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--166
+Underfull \hbox (badness 10000) in paragraph at lines 153--164
 []\OT1/ptm/b/n/10 for ([] \OT1/ptm/m/n/10 = []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--166
+Underfull \hbox (badness 10000) in paragraph at lines 153--164
 
  []
 
 
-Underfull \hbox (badness 6961) in paragraph at lines 155--166
+Underfull \hbox (badness 6961) in paragraph at lines 153--164
 []\OT1/ptm/b/n/10 if \OT1/ptm/m/n/10 ([]) \OT1/ptm/b/n/10 then do \OMS/cmsy/m/n
 /10 f
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--177
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
 
  []
 
@@ -498,7 +503,7 @@ fb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 cmsy9.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/utmb8a
 .pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
 </usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on check.pdf (2 pages, 103821 bytes).
+Output written on check.pdf (2 pages, 103809 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream

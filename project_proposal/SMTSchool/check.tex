@@ -25,8 +25,6 @@
 
 \renewcommand{\thesubsection}{\alph{subsection}}
 
-
-
 \usepackage{amsmath} % American mathematical society package for matrices etc.
 \usepackage{amssymb} %American mathematical society symbols
     
@@ -140,8 +138,8 @@ We will covert the program in logical formula using Racket/Rosette, and then pro
 		
 		<post-cond> ::= {\bf @post}(<assertion>);
 		
-		<assertion> ::= (<assertion> {\bf \&\&} <assertion>)
-								\alt (<assertion> ::= <assertion> {\bf || }<assertion>)
+		<assertion> ::= (<assertion>{\bf \&\&}<assertion>)
+								\alt <assertion> \textbf{ || }<assertion>)
 								\alt (<expr> = <expr>)
 								\alt (<expr>  $\le$  <expr>)
 								
