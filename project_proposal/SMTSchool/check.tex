@@ -2,6 +2,7 @@
 %File: formatting-instruction.tex
 \documentclass[letterpaper]{article} % DO NOT CHANGE THIS
 \usepackage{aaai19}  % DO NOT CHANGE THIS
+
 \usepackage{times}  % DO NOT CHANGE THIS
 \usepackage{helvet} % DO NOT CHANGE THIS
 \usepackage{courier}  % DO NOT CHANGE THIS
@@ -13,7 +14,7 @@
 \frenchspacing  % DO NOT CHANGE THIS
 \setlength{\pdfpagewidth}{8.5in}  % DO NOT CHANGE THIS
 \setlength{\pdfpageheight}{11in}  % DO NOT CHANGE THIS
-
+\usepackage{syntax}
 
 \usepackage{turnstile}
 \usepackage{centernot}
@@ -23,6 +24,8 @@
 \usepackage{listings}
 
 \renewcommand{\thesubsection}{\alph{subsection}}
+
+
 
 \usepackage{amsmath} % American mathematical society package for matrices etc.
 \usepackage{amssymb} %American mathematical society symbols
@@ -121,7 +124,66 @@ We will covert the program in logical formula using Racket/Rosette, and then pro
 	\item Experiment our implementation on a targeted class of benchmark examples.
 \end{enumerate}
 
+\section {Detailed Approach}
+\setlength{\grammarparsep}{20pt plus 1pt minus 1pt} % increase separation between rules
+\setlength{\grammarindent}{12em} % increase separation between LHS/RHS 
 
+\begin{enumerate}
+	\item The grammar that we are allowing for the program is described below:
+	\begin{grammar}
+		<Prog> := <pre-cond>\\
+						<declaration>*\\
+						<stmt-list>\\
+						<post-cond>;
+		
+		<pre-cond> ::= {\bf @pre}(<assertion>);
+		
+		<post-cond> ::= {\bf @post}(<assertion>);
+		
+		<assertion> ::= (<assertion> {\bf \&\&} <assertion>)
+								\alt (<assertion> ::= <assertion> {\bf || }<assertion>)
+								\alt (<expr> = <expr>)
+								\alt (<expr>  $\le$  <expr>)
+								
+								
+		
+		<declaration>  ::= {\bf int} <int-var>;
+								\alt  {\bf int[]} <array-var>;
+		
+		<assignment>  ::= <ident> {\bf =} <expr>;		
+					
+		<stmt> ::= <assignment>\\
+		\alt {\bf for (}<ident> = <expr> {\bf to} <expr>{\bf )} {\bf do} 
+		\{\\
+		<pre-cond>\\
+		<assignment>*\\
+		<post-cond>\\
+		\}\\
+		\alt {\bf if} (<cond>) {\bf then do}
+	    \{
+	    <assignment>*
+	    \}
+	    
+	    <expr> ::=  <expr> + <expr>
+    					\alt <array-var>[<expr>];
+    					\alt <int-var>
+    					
+		<stmt-list> ::= <statement> {\bf ;} <stmt-list> 
+						\alt <stmt>;
+						\alt <empty>
+		
+		<ident>   ::= <integer-identifier>
+		\\
+	\end{grammar}
+
+	\item We will explain further how we can convert a general program written in this way to the Racket/Rosette Program. 
+	
+	\item Explore the {\bf vector} datatype in Rosette and how to use it for our purposes. 
+	
+	\item Each loop will be verified separately using it's {\bf pre} and {\bf post} conditions only. If the loop passes the test, then in the final checking of program, the {\bf post} condition of the loop will be assumed without verifiying the loop again. 
+	
+	\item ...
+\end{enumerate}
 \section{Expected Results}
 This is a work under progress being done as a project for an SMT course.
 By the time of SMT School we expect to have an implementation of the tool in Rosette with results of running our tool on a set of benchmark array manipulating programs.

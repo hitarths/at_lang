@@ -1,11 +1,13 @@
 \documentclass[a4paper, 12pt, notitlepage] {article}
 \usepackage{color}
 \usepackage{verbatim}
+\usepackage{syntax}
 \usepackage{graphicx}
 \usepackage{enumerate}
 \usepackage{turnstile}
 \usepackage{centernot}
 \usepackage{mathtools}
+
 
 \usepackage{listings}
 \renewcommand{\thesubsection}{\alph{subsection}}
@@ -63,11 +65,11 @@ We have deliberately introduced a {\bf bug} in line~5 of the program by using $j
 1: int[10] a;
 2: unsigned int i, j;
 3: ${\bf @Pre:  assume}(i<10~\&\&~j <10)$
-4: if (a[i] <= a[j]) {
+4: if (a[i] > a[j]) {
 5:    temp = a[j]; //Bug!!
 6:    a[i] = a[j];
 7:    a[j] = temp; }
-8: ${\bf @Post:  assert}(a[i] > a[j])$
+8: ${\bf @Post:  assert}(a[i] \leq a[j])$
 \end{lstlisting}
 $ $\\
 Our goal is to develop a prototype tool that does the following:
@@ -127,18 +129,7 @@ We expect to have a system which can take simple array programs and help the use
 Almost all the programs use arrays in one way or another, but most of the useful programs involving arrays also have loops. At least for now, our plan is not to indulge with loops. We might consider the loops if we are successful in the first phase of our project. 
 }
 
-\begin{thebibliography}{unsrt}
-	
-	\bibitem{rosette_paper}
-	E. Torlak and R. Bodik. Growing solver-aided languages with Rosette. In Onward!, 2013.
-	
-	\bibitem{bugassist}
-	Manu Jose and Rupak Majumdar, Cause Clue Clauses: Error Localization Using Maximum Satisfiablity, ACM SIGPLAN conference on Programming Language Design and Implementation (PLDI), June 2011, San Jose, California, USA.
-	
-	\bibitem{weakeqarrays}
-	J. Christ and J. Hoenicke, Weakly Equivalent Arrays, SMT 2014
-	
-\end{thebibliography}
+
 
 
 \end{document}
