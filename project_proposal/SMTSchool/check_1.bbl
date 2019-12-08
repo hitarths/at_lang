@@ -1,0 +1,26 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Christ and Hoenicke}{2015}]{christ2015weakly}
+Christ, J., and Hoenicke, J.
+\newblock 2015.
+\newblock Weakly equivalent arrays.
+\newblock In {\em International Symposium on Frontiers of Combining Systems},
+  119--134.
+\newblock Springer.
+
+\bibitem[\protect\citeauthoryear{Jose and Majumdar}{2011}]{jose2011cause}
+Jose, M., and Majumdar, R.
+\newblock 2011.
+\newblock Cause clue clauses: error localization using maximum satisfiability.
+\newblock In {\em ACM SIGPLAN Notices}, volume~46,  437--446.
+\newblock ACM.
+
+\bibitem[\protect\citeauthoryear{Torlak and Bodik}{2013}]{torlak2013growing}
+Torlak, E., and Bodik, R.
+\newblock 2013.
+\newblock Growing solver-aided languages with rosette.
+\newblock In {\em Proceedings of the 2013 ACM international symposium on New
+  ideas, new paradigms, and reflections on programming \& software},  135--152.
+\newblock ACM.
+
+\end{thebibliography}

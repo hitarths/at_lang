@@ -1,0 +1,11 @@
+@pre(((i<10 and j<10) and a[i] > a[j]));
+    int i;
+    int j;
+    int temp;
+    int[] a;
+    if (a[i] > a[j]) then do {
+         temp = a[j];
+         a[i] = a[j];
+         a[j] = temp;
+    }
+    @post(a[i] < a[j]);

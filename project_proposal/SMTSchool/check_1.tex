@@ -1,0 +1,172 @@
+\def\year{2019}\relax
+%File: formatting-instruction.tex
+\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+\usepackage{aaai19}  % DO NOT CHANGE THIS
+
+\usepackage{times}  % DO NOT CHANGE THIS
+\usepackage{helvet} % DO NOT CHANGE THIS
+\usepackage{courier}  % DO NOT CHANGE THIS
+\usepackage[hyphens]{url}  % DO NOT CHANGE THIS
+\usepackage{graphicx} % DO NOT CHANGE THIS
+\urlstyle{rm} % DO NOT CHANGE THIS
+\def\UrlFont{\rm}  % DO NOT CHANGE THIS
+\usepackage{graphicx}  % DO NOT CHANGE THIS
+\frenchspacing  % DO NOT CHANGE THIS
+\setlength{\pdfpagewidth}{8.5in}  % DO NOT CHANGE THIS
+\setlength{\pdfpageheight}{11in}  % DO NOT CHANGE THIS
+\usepackage{syntax}
+
+\usepackage{turnstile}
+\usepackage{centernot}
+\usepackage{mathtools}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{listings}
+
+\renewcommand{\thesubsection}{\alph{subsection}}
+
+\usepackage{amsmath} % American mathematical society package for matrices etc.
+\usepackage{amssymb} %American mathematical society symbols
+    
+  % Add additional packages here.
+  %
+  % The following
+  % packages may NEVER be used (this list
+  % is not exhaustive:
+  % authblk, caption, CJK, float, fullpage, geometry,
+  % hyperref, layout, nameref, natbib, savetrees,
+  % setspace, titlesec, tocbibind, ulem
+  %
+  %
+  % PDFINFO
+  % You are required to complete the following
+  % for pass-through to the PDF.
+  % No LaTeX commands of any kind may be
+  % entered. The parentheses and spaces
+  % are an integral part of the
+  % pdfinfo script and must not be removed.
+  %
+  \pdfinfo{
+  	/Title (Analysis of Array Manipulating Programs)
+  	/Author (Hitarth, Bhishmaraj)
+  	/Keywords (Rosette, Racket, Array Manipulating Programs)
+  }
+  %
+  % Section Numbers
+  % Uncomment if you want to use section numbers
+  % and change the 0 to a 1 or 2
+  % \setcounter{secnumdepth}{0}
+  % Title and Author Information Must Immediately Follow
+  % the pdfinfo within the preamble
+  %
+  \title{Tool for analysis of Array Manipulating Programs using Rosette}
+  \author{Hitarth,  Bhishmaraj}
+  
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+Solver-aided programming language/framework, such as Rosette \cite{torlak2013growing} extend traditional programming languages with SAT/SMT-specific interface and constructs.
+Such a language framework makes it easier to embed/model domain-specific artifacts/systems and exploit use of SAT/SMT solver features (UNSAT, MAX-SAT, UNSAT-CORE, etc.) for performing various constraint-solving tasks, such as symbolic verification, debugging, bug localization, and synthesis.
+
+Most of the current work in this field is focussed on arithmetic and bit-vector theories. There are tools for verification of programs in ANSI C with suitable assertions to  a limited extent, like BugAssist \cite{jose2011cause}, but they don't focus on other solutions like synthesis. Also it's code is not open source.\\
+\\
+{\bf In this project} we propose to use Rosette-Racket for analysis ($verification$, $debugging$, and \emph{bug-fixing}) of array manipulating programs.
+An array theory poses a challenge for symbolic analysis as it is undecidable, in general, because it requires quantifier instantiation.
+%\mscmt{Please check moodle under arraydecproc for the paper; you guys seem never bother to check anything I upload on Moodle!!}\\
+We simplify our problem by restricting ourselves to a decidable fragment of arrays theory~\cite{christ2015weakly}
+We simplify the problem of bug-fixing, which is essentially a synthesis problem, by restricting the grammar of the expressions that can be used in the fixes.
+
+\section {Problem: Automatic Verification, Debugging and Fixing Array Programs}
+%\mscmt{As I suggested yesterday, use a simple (buggy) array program with multiple assignment statements possibly conditional to clearly illustrate the three tasks of verification, bug-localization and bug-fixing.}\\
+
+Consider a simple program that is expected to swap the values at $i$ and $j$ index of an array $a$ if they are not in ascending order.
+
+We have deliberately introduced a {\bf bug} in line~5 of the program by using $j$ instead of $i$ in the array select to preserve the post-assertion\\ 
+
+\begin{lstlisting}[language=C, mathescape=true]
+1: int[10] a;
+2: unsigned int i, j;
+3: ${\bf @Pre:  assume}(i<10~\&\&~j <10)$
+4: if (a[i] > a[j]) {
+5:    temp = a[j]; //Bug!!
+6:    a[i] = a[j];
+7:    a[j] = temp; }
+8: ${\bf @Post:  assert}(a[i] \leq a[j])$
+\end{lstlisting}
+$ $\\
+Our goal is to develop a prototype tool that does the following:
+(1) \emph{verify} such program assertions, and if an assertion fails (2) localize \emph{bugs} to a region (line~5, in this example) of the program, and suggest a possible fix (replace $j$ by $i$) that makes the assertion true.
+\section {Approach}
+
+
+We will covert the program in logical formula using Racket/Rosette, and then proceed to the verification. Assume that the final formula we get is $P$.\\\\
+{\bf Verification:} We expect that $\neg P$ will be $UNSAT$. If it is the case, the program is verified.
+\\\\
+{\bf Bug Localization:} If $\neg P$ is $SAT$, then there is a bug in the program. We shall get one or more counter models for this $SAT$ instance; for these models $P$ must be UNSAT.  We use the $UNSAT$ core for UNSAT proof of $P$ under this model to filter out as much of the code which is not relevant for the bug. These tasks will be done using interface in Rosette for computing MAXSAT and UNSAT cores. \\
+\\
+{\bf Bug-fixing:} For the sake of simplicity, {\bf we shall assume that the bug lies in the array access operations} in the program. For synthesis, we shall convert the program to a sketch by introducing \emph{holes} in the array access operations, i.e., in the index expressions used in array select or update. Then, with the help of Rosette, we shall try to find out the possible substitution for the holes so that the $\neg P$ becomes $UNSAT$, and hence the program becomes correct. \\
+\\
+{\bf Methodology}
+\begin{enumerate}
+	\item  Describing a language which can be used to specify the array manipulating programs with the pre/post conditions and loop invariants
+	\item We will be implementing the tool in Rosette. The steps will be as follows:
+	\begin{itemize}
+		\item Embed the array programming language within Rosette
+		\item Convert the program and assertions into SMT array logic in SMT lib format and check assertions.
+		\item Use counter models and related UNSAT cores to perform bug localization.
+		\item Synthesize bug fixes by performing syntax-guided search on the defined grammar for possible fixes.
+	\end{itemize}
+	\item Implementation of our method within the Rosette-Racket solver-aided programming tool/language framework.
+	\item Experiment our implementation on a targeted class of benchmark examples.
+\end{enumerate}
+
+\section {Detailed Approach}
+\setlength{\grammarparsep}{20pt plus 1pt minus 1pt} % increase separation between rules
+\setlength{\grammarindent}{12em} % increase separation between LHS/RHS 
+
+\begin{enumerate}
+	\item The grammar that we are allowing for the program is described below:
+	\begin{grammar}
+		<Program> ::=  {\bf @pre}(<assertion>);\\
+		<declaration>*\\
+		<stmt>*\\
+		{\bf @post}(<assertion>);
+		
+		<declaration>  ::= {\bf int} <int-var>;
+		\alt  {\bf int[]} <array-var>;
+		
+		<stmt> ::= <assignment>\\
+		\alt {\bf if} (<cond>) {\bf then do}
+		\{
+		<assignment>*
+		\}
+		{\bf else} {\\
+			<assignment>*
+		}\\
+		
+		<assignment>  ::= <ident> {\bf =} <expr>;		
+		<ident>   ::= <integer-identifier>
+		\alt <array-identifier>[<integer-identifier>]
+		\alt <array-identifier>[<number>]
+		\\
+		\\
+	\end{grammar}
+
+	\item We will explain further how we can convert a general program written in this way to the Racket/Rosette Program. 
+	
+	\item Explore the {\bf vector} datatype in Rosette and how to use it for our purposes. 
+	
+	\item Each loop will be verified separately using it's {\bf pre} and {\bf post} conditions only. If the loop passes the test, then in the final checking of program, the {\bf post} condition of the loop will be assumed without verifiying the loop again. 
+	
+	\item ...
+\end{enumerate}
+\section{Expected Results}
+This is a work under progress being done as a project for an SMT course.
+By the time of SMT School we expect to have an implementation of the tool in Rosette with results of running our tool on a set of benchmark array manipulating programs.
+
+\bibliography{prop}
+\bibliographystyle{aaai}
+
+\end{document}
