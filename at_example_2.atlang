@@ -1,0 +1,10 @@
+@pre(((i<10 and j<10) and a[i] > a[j]));
+int i;
+int j;
+int x;
+int y;
+int[] a;
+a[i] = x;
+a[j] = y;
+a[0] = (a[i] + a[i]);  #Bug
+@post(a[0] = (x + y));
